@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal Catalán Súria | Menú Diario Casero en 60 Minutos</title>
+    <meta name="description" content="¿Solo tienes una hora para comer en Súria? En Cal Catalán te servimos menú casero caliente y rápido. Parking fácil. Reserva mesa en 1 click.">
+    <meta name="theme-color" content="#D94E1F">
+    
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            terra: '#D94E1F',
+                            terraDark: '#9a3412',
+                            cream: '#FFFAF5',
+                            dark: '#0F172A',
+                            green: '#25D366',
+                            stone: '#F5F5F4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'floating': '0 -4px 20px rgba(0,0,0,0.1)',
+                    },
+                    transitionTimingFunction: {
+                        'heavy-stop': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                        'snap-lock': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { 
+            background-color: #F5F5F4;
+            color: #1E293B;
+        }
+
+        .gpu-layer {
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            will-change: transform, opacity;
+        }
+
+        .bg-texture {
+            background-image: radial-gradient(#D94E1F 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(2.4); opacity: 0; }
+        }
+
+        .animate-ring::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; width: 100%; height: 100%;
+            border-radius: 50%;
+            background-color: #D94E1F;
+            z-index: -1;
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        /* React Transition/Reveal Classes */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sticky Logic Helpers */
+        .translate-y-full-hidden { transform: translateY(110%); }
+        .translate-y-0-visible { transform: translateY(0); }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-stone-50 text-slate-800 pb-32">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
