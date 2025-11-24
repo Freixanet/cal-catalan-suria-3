@@ -20,7 +20,7 @@ const MenuCard: React.FC = () => {
                             </div>
                         </div>
 
-                        <div onClick={() => setIsZoomOpen(true)} className="relative group cursor-pointer overflow-hidden rounded-lg mb-6 bg-slate-100 aspect-[6/5]">
+                        <div onClick={() => setIsZoomOpen(true)} className="relative group cursor-pointer overflow-hidden rounded-lg mb-6 bg-slate-100">
                             <div className="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1.5">
                                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                                 PIZARRA DE HOY
@@ -29,7 +29,7 @@ const MenuCard: React.FC = () => {
                                 alt="Pizarra manuscrita con el menú de hoy: Fricandó, Lentejas y más"
                                 loading="lazy"
                                 width={600} height={500}
-                                className="w-full h-full object-cover transform transition duration-300 ease-out grayscale-[10%] group-hover:scale-105 group-hover:grayscale-0 will-change-transform"
+                                className="w-full h-auto transform transition duration-300 ease-out grayscale-[10%] group-hover:scale-105 group-hover:grayscale-0 will-change-transform"
                             />
                             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent h-12"></div>
                         </div>
